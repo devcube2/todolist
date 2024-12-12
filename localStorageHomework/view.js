@@ -12,7 +12,7 @@ function 삭제함수(index) { // 매개변수 , 삭제할 인덱스 번호
     localStorage.removeItem('board') // localStorage 값 교체하기위해 삭제..
     localStorage.setItem('board', JSON.stringify(board))
     alert('삭제하였습니다.')
-    history.back() // 바로 전 페이지로 이동... (목록페이지로 가게된다.)
+    location.replace("board.html") // 목록 페이지로 이동
 }
 
 const board = JSON.parse(localStorage.getItem('board'))
