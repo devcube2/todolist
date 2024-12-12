@@ -24,6 +24,6 @@ let info = article.split(',')
 
 document.querySelector('.titleBox').innerHTML = info[0] // 제목 데이터를 .titleBox 마크업 사이에 대입
 document.querySelector('.contentBox').innerHTML = info[1] // 내용 데이터를 .contentBox 마크업 사이에 대입
-document.querySelector('.dateBox').innerHTML = info[2] // 작성일 데이터를 .dateBox 마크업 사이에 대입
-document.querySelector('.viewBox').innerHTML = info[3] // 조회수 데이터를 .viewBox 마크업 사이에 대입
+document.querySelector('.dateBox').innerHTML = info[3] // 작성일 데이터를 .dateBox 마크업 사이에 대입
+document.querySelector('.viewBox').innerHTML = info[4] // 조회수 데이터를 .viewBox 마크업 사이에 대입
 document.querySelector('.btnBox').innerHTML = `<button onclick="삭제함수(${index})" type="button">삭제</button>`
