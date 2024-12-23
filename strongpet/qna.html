@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>qna</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/qna.css'>
+</head>
+<body>
+    <div id="q_wrap">
+        <div id="q_top">
+            <span><h1> 1대1문의 </h1></span>
+            <div class="q_btn">
+                <input onclick="location.href='board.html'" class="btn_c" type="button" value="취소" />
+                <input onclick="register()" class="btn_w" type="button" value="작성" />
+            </div>
+        </div>
+        <div id="q_bottom">
+            <div class="q_b_top">
+                <span class="q_b_img"><img src="./img/board/user.png"></span>
+                <input class="q_b_name" type="text" placeholder="작성자 이름" >
+                <input class="q_b_password" type="password" placeholder="비밀번호" >
+                <span class="secret">
+                    <a href="#"><img src="./img/board/secret.png"></a>
+                    <div class="secret_box active">
+                        <span class="secret_text">비밀글</span>
+                        <span class="secret_tooltip"></span>
+                    </div>
+                </span>
+            </div>
+            <div class="q_b_bottom">
+                <span class="category">
+                    <a href="#">카테고리</a>
+                    <ul>
+                        <li> <a href="#">카테고리</a></li>
+                        <li> <a class="blue" href="#">상품</a></li>
+                        <li> <a class="red" href="#">배송</a></li>
+                        <li> <a class="purple" href="#">회원</a></li>
+                        <li> <a class="green" href="#">기타</a></li>
+                    </ul>
+                </span>
+                <input class="q_b_title" type="text" placeholder="제목">
+            </div>
+            <textarea class="q_b_content" placeholder="내용을 입력해주세요."></textarea>
+        </div>
+    </div>
+    <script src='./js/boardData.js'></script>
+    <script src='./js/qna.js'></script>
+</body>
+</html>

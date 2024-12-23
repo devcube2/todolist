@@ -1,0 +1,179 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none; color: black;
+}
+li{
+    list-style: none;
+}
+.font{
+    font-weight: 900;
+}
+.red { color: #FF635D; }
+.green { color: #6ECC51; }
+.blue { color: #00B8FF; }
+.purple { color:purple; }
+/* 전체 */
+
+#b_wrap{
+    width: 1280px; padding: 100px 15px;
+    margin: 0 auto; 
+}
+#b_top{
+    display: flex; justify-content: space-between;
+    margin-bottom: 50px;
+}
+#b_top h1{
+    font-size: 36px; 
+}
+#b_top > .topbox > span:first-child{
+    margin-right: 20px; font-size: 12px;
+}
+#b_top > .topbox > span:last-child {
+    margin-left: 20px; font-size: 12px;
+}
+#b_top > .topbox > span img{
+    width: 6px;
+}
+/* b_top end*/
+
+#b_middle{
+    margin-bottom: 30px;
+}
+#b_middle > div > ul{
+    display: flex; justify-content: space-between;
+    background-color: #f2f6f6;
+}
+#b_middle > div > ul li{
+    background-color: #f2f6f6;
+}
+#b_middle > div > ul li.m_active{
+    background-color: #ffac00;
+}
+#b_middle > div > ul li.m_active > a{
+    color: white;
+}
+#b_middle > div > ul li a{
+    padding: 15px 75px; display: block;
+    font-size: 14px;
+}
+#b_middle > div > ul li:not(.m_active) a:hover{
+    color: #ffac00; transition: 0.5s;
+}
+/* b_middle  end*/
+
+#b_bottom table{
+    border-top: 1px solid black;
+}
+#b_bottom .category{
+    background-image: url('../img/board/Triangle1.png');
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: right 40px top 50%;
+    position: relative;
+}
+#b_bottom .category ul{
+    position: absolute; left: 60px; top: 95%;
+    width: 100%; border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 5px; z-index: 1; background-color: white;
+    /*드롭박스 none */
+}
+.hidden {
+    display: none !important;
+}
+#dropdownMenu {
+    display: block;
+}
+#b_bottom .category ul li a{
+    display: block;
+    padding: 10px 40px 10px 10px;
+    text-align: left;
+}
+#b_bottom .category ul li a:hover{
+    background-color: rgb(236, 245, 255);
+}
+#b_bottom > .b_table{
+    margin-bottom: 15px;
+}
+#b_bottom > .b_table table{
+    width: 100%; 
+    font-size: 14px;
+    text-align: center;
+    border-collapse: collapse; /* tr에 border 들어가게 하는 코드 */
+}
+#b_bottom > .b_table table thead tr th,
+#b_bottom > .b_table table tbody tr td{
+    font-weight: 400; 
+    padding: 15px 0px;
+}
+#b_bottom > .b_table table thead tr,
+#b_bottom > .b_table table tbody tr{
+    border-bottom: 1px solid #dfdfdf;
+}
+#b_bottom > .b_table table thead tr th:nth-of-type(1){
+    width: 5%;
+}
+#b_bottom > .b_table table thead tr th:nth-of-type(2){
+    width: 15%;
+}
+#b_bottom > .b_table table thead tr th:nth-of-type(3){
+    width: 60%;
+}
+#b_bottom > .b_table table thead tr th:nth-of-type(4){
+    width: 10%;
+}
+#b_bottom > .b_table table thead tr th:nth-of-type(5){
+    width: 10%;
+}
+#b_bottom > .b_table table tbody tr td.tbody_img{
+    background-image: url('../img/board/secret.png');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: left; padding-left: 20px;
+}
+#b_bottom > .b_table table tbody tr td:nth-of-type(4),
+#b_bottom > .b_table table tbody tr td:nth-of-type(5){
+    color: rgba(42,42,42,0.65);
+}
+/* b_bottom end */
+
+#b_function .b_f_top{
+    text-align: right;
+    margin-bottom: 30px;
+}
+#b_function .b_f_top .search{
+    margin-right: 400px; 
+    padding: 8px 30px 8px 8px;
+    border: 1px solid black;
+    background-image: url('../img/board/search_icon.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 5px top 7px;
+}
+#b_function .b_f_top .btn{
+    padding: 10px 40px; background-color: black; color: white;
+    border: none; font-size: 12px;
+}
+#b_function .b_f_top .btn:hover{
+    background-color: #ffac00; transition: 0.5s;
+}
+#b_function .b_f_bottom ul{
+    display: flex; justify-content: center;
+}
+#b_function .b_f_bottom ul > *{
+    margin: 0 10px; 
+    color: #aaaaaa;
+}
+#b_function .b_f_bottom ul li a{
+    display: block; color: #aaaaaa; font-size: 16px; font-weight: bold;
+}
+#b_function .b_f_bottom ul li a:hover{
+    color: black; transition: 0.5s;
+}
+#b_function .b_f_bottom ul li.f_active a{
+    color: black;
+}
+/* b_function end */

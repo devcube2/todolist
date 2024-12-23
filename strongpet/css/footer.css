@@ -1,0 +1,50 @@
+#footer {
+    background-color: #fff; 
+    color: #666; 
+    font-size: 12px; 
+    padding: 20px 0; 
+    text-align: left; 
+    border-top: 1px solid #ddd; 
+    line-height: 1.6; 
+    width: 1280px;
+    align-items: center;
+    margin: 0 auto; /* 가운데 정렬 */
+    align-items: center;
+}
+
+#footer p {
+    margin: 5px 0; 
+}
+
+#footer button {
+    background-color: transparent; 
+    color: #333; 
+    border: none; 
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px;
+    text-decoration: none; 
+}
+
+#footer button:hover {
+    text-decoration: underline; 
+}
+
+#footer .useAgree,
+#footer .useInfo {
+    color: #666; 
+}
+
+#footer br {
+    display: none; 
+}
+
+#footer .useAgree,
+#footer .useInfo {
+    float: right;
+    margin-left: 10px;
+}
+
+#footer p:last-child {
+    margin-top: 10px; 
+}

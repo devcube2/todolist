@@ -1,0 +1,228 @@
+.strongpet-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#strongpet-header-top>#header-top {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#strongpet-header-nav>#header-nav {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px; /* 누가 얘한테 margin 을 주는건지 모르겠음. 값 안주면 16px 바텀에 먹임.. */
+}
+
+/* 전체 스타일링 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 스타일 */
+#header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+#top-search-box input {
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+    background-image: url('../img/board/search_icon.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: right top 50%;
+}
+
+#top-logo img {
+    height: 50px;
+}
+
+#top-menu button {
+    margin-left: 10px;
+    background-color :  white;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 모달 스타일 */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+.form-check-input {
+    accent-color: black;
+}
+
+.form-check-label {
+    margin-left: 0px;
+}
+
+.btn-dark {
+    background-color: #333;
+    border: none;
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+}
+
+.btn-success {
+    background-color: green;
+    color: white;
+}
+
+.btn-warning {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+.modal-header .modal-title {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.modal-body .form-group input {
+    margin-bottom: 10px;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+.unjoin {
+    border: 1px solid;
+    height: 50px;
+    width: 420px;
+    background-color: gray;
+    color: white;
+
+}
+
+.loginJoin{
+    color: black;
+    margin-left: -15px;
+    text-decoration-line: none;
+}
+
+.loginFind{
+    color: black;
+    margin-left: 180px;
+    text-decoration-line: none;
+}
+
+.btn_join{
+    border: 1px solid lightgray;
+    height: 50px;
+    width: 420px;
+    background-color: white;
+    color: black;
+}
+.close-btn{
+    margin-left: 15px;
+    height: 50px;
+    width: 45%;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+.add_join{
+    height: 50px;
+    width: 45%;
+    background-color: black;
+    color: white;
+}
+.real_join {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.ffff{
+    width: 385px;
+}
+
+#agreeAge {
+    margin-left: -8px;
+}
+
+#agreePrivacy{
+    margin-left: -8px;
+}
+
+#agreeTerms{
+    margin-left: -8px;
+}
+
+#agreeAll{
+    margin-left: -8px;
+}
+
+.email{
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius:5px;
+}
+
+.password{
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius:5px;
+}
+
+#termsContent{
+    margin-left: 16px;
+    resize: none;
+    width: 90%;
+    border: 1px solid lightgray;
+}
+
+#privacyContent{
+    margin-left: 16px;
+    resize: none;
+    width: 90%;
+    border: 1px solid lightgray;
+}

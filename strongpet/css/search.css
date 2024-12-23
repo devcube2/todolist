@@ -1,0 +1,25 @@
+@import url(common.css);
+@import url(util.css);
+
+.show-line {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-box {
+    width: 15%;
+    text-align: center;
+    padding: 0px 15px;
+}
+
+.show-box-img {
+    display: block;
+    width: 100%;
+}
+
+#search-main {
+    width: 1250px;
+    margin: 0 auto;
+    padding-top: 50px;
+}

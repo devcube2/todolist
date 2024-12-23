@@ -1,0 +1,173 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none; color: black;
+}
+li{
+    list-style-type: none;
+}
+.red{ color: #FF635D; }
+.green{ color: #6ECC51; }
+.blue{ color: #00B8FF; }
+.purple{ color: purple; }
+
+#q_top{
+    display: flex; justify-content: space-between;
+    border-bottom: 1px solid #dfdfdf; padding: 20px 0px;
+    margin-bottom: 50px;
+}
+#q_top span{
+    display: inline-block; margin-left: 30px;
+}
+#q_top span h1{
+    font-size: 20px; font-weight: 400;
+}
+#q_top .q_btn{
+    margin-right: 40px; 
+    width: 120px;
+}
+#q_top .q_btn input{
+    padding: 8px 15px;
+    background-color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+}
+#q_top .q_btn .btn_c{
+    border: 1px solid #d3d3d3;
+}
+#q_top .q_btn .btn_w{
+    background-color: #ffac00; color: white;
+}
+#q_top .q_btn .btn_c:hover,
+#q_top .q_btn .btn_w:hover{
+    border: 1px solid black;
+}
+/* q_top end */
+
+#q_bottom{
+    margin: 0 auto; width: 900px;
+}
+#q_bottom input{
+    border: none;
+}
+#q_bottom .q_b_top{
+    position: relative; margin-bottom: 30px;
+}
+#q_bottom .q_b_top .q_b_img{
+    position: absolute;
+    left: -45px; top: -2px;
+}
+#q_bottom .q_b_top .q_b_img img{
+    width: 35px;
+    border-radius: 50px;
+}
+#q_bottom .q_b_top input{
+    border-bottom: 1px solid #dfdfdf;
+    outline: none; padding: 0px 20px 5px 0px;
+    margin-right: 5px; font-size: 14px;
+}
+#q_bottom .q_b_top .secret{
+    position: absolute; right : 0;
+}
+#q_bottom .q_b_top .secret a{
+    display: block;
+}
+#q_bottom .q_b_top .secret a img{
+    width: 20px;
+}
+#q_bottom .q_b_top .secret_text{
+    position: absolute; right: -12px; bottom: 35px;
+    width: 45px; text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 12px; border-radius: 5px;
+    padding: 5px 10px;
+}
+#q_bottom .q_b_top .secret_tooltip{
+    position: absolute; right: 3px; bottom: 26px;
+    width: 15px; height: 10px;
+    background-image: url('../img/board/Triangle1.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+}
+#q_bottom .q_b_top .secret .secret_box{
+    display: none;
+    /* 비밀글 툴팁 */
+}
+.secret.active .secret_box {
+    display: block;
+}
+#q_bottom .q_b_top .secret:hover .secret_box{
+    display: block;
+}
+/* #q_bottom .q_b_top end */
+
+#q_bottom .q_b_bottom{
+    margin-bottom: 30px;
+    display: flex;
+}
+#q_bottom .q_b_bottom > .category > a,
+#q_bottom .q_b_bottom > input{
+    border-bottom: 1px solid #dfdfdf;
+    outline: none; font-size: 20px;
+}
+#q_bottom .q_b_bottom > .category{
+    background-image: url('../img/board/Triangle1.png');
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    position: relative;
+    margin-right: 20px;
+}
+#q_bottom .q_b_bottom > .category > a{
+    padding: 0px 100px 5px 0px;
+}
+#q_bottom .q_b_bottom > .category > ul {
+    position: absolute; top : 32px;
+    width: 100%; border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 10px; z-index: 1; background-color: #f2f3f5;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
+    padding: 5px 0px;
+    display: none;
+    /*드롭박스 none */
+}
+#q_bottom .q_b_bottom > .category ul li{
+    position: relative;
+}
+#q_bottom .q_b_bottom > .category ul li::before{
+    content: '';
+    position: absolute;
+    background-image: url('../img/board/check.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 7px; top: 6px;
+    width: 12px; height: 12px;
+    visibility: hidden;
+}
+.category.active ul {
+    display: block;
+}
+
+.category ul li.selected::before {
+    visibility: visible;
+}
+
+#q_bottom .q_b_bottom > .category ul li a{
+    display: block; text-align: left;
+    padding: 5px 40px 5px 25px; font-size: 12px;
+}
+#q_bottom .q_b_bottom > .category ul li:hover{
+    background-color: rgb(98, 166, 243);
+}
+#q_bottom .q_b_bottom > input{
+    padding: 8px 200px 1px 0px; width: 700px;
+}
+#q_bottom textarea{
+    outline: none; resize: none; border: 1px solid #dfdfdf;
+    font-size: 20px; color: #aaaaaa; line-height: 30px;
+    width: 100%; height: 700px; padding: 10px 0px;
+}
+/* q_bottom end */

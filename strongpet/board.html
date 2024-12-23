@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>board</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/board.css'>
+</head>
+<body>
+    <div id="b_wrap">
+        <div id="b_top">
+            <h1> 1:1문의 </h1>
+            <div class="topbox">
+                <span><a href="#">커뮤니티</a></span>
+                <span><img src="./img/board/right_arrow.png"></span>
+                <span><a href="#">1:1문의</a></span>
+            </div>
+        </div> <!-- b_top end-->
+        <div id="b_middle">
+            <div>
+                <ul>
+                    <li><a href="#"> 공지사항 </a></li>
+                    <li><a href="#"> 이벤트 </a></li>
+                    <li><a href="#"> 사업자도매문의 </a></li>
+                    <li class="m_active"><a href="#"> 1:1문의 </a></li>
+                    <li><a href="#"> 상품리뷰 </a></li>
+                    <li><a href="#"> FAQ </a></li>
+                </ul>
+            </div>
+        </div> <!-- b_middle end-->
+        <div id="b_bottom">
+            <div class="b_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> No </th>
+                            <th class="category"> 
+                                <a id="categoryDropdown" href="#"> 카테고리 </a>
+                                <ul id="dropdownMenu" class="hidden">
+                                    <li class="font"> <a href="#">전체보기</a></li>
+                                    <li> <a class="blue" href="#">상품</a></li>
+                                    <li> <a class="red" href="#">배송</a></li>
+                                    <li> <a class="purple" href="#">회원</a></li>
+                                    <li> <a class="green" href="#">기타</a></li>
+                                </ul>
+                            </th>
+                            <th> 제목 </th>
+                            <th> 글쓴이 </th>
+                            <th> 작성시간 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 94 </td> <td ><a class="red" href="#"> 배송 </a></td> <td class="tbody_img"><a href="#"> 궁팡 구매건 배송 </a></td> <td> 김은**** </td> <td> 2일전 </td>
+                        </tr>
+                        <tr>
+                            <td> 93 </td> <td ><a class="green" href="#"> 기타 </td> <td class="tbody_img"><a href="#"> 수원박람회 제품 미수령건 </a></td> <td> 이현**** </td> <td> 2024-10-25 </td>
+                        </tr>
+                        <tr>
+                            <td> 92 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 아픈 노령견 문의드립니다. </a></td> <td> 짱짱**** </td> <td> 2024-08-09 </td>
+                        </tr>
+                        <tr>
+                            <td> 91 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 상품 문의 </a></td> <td> 임정**** </td> <td> 2024-07-24 </td>
+                        </tr>
+                        <tr>
+                            <td> 90 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 꼬마트릿 복어,치킨 입고 일정 </a></td> <td> 박소**** </td> <td> 2024-07-17 </td>
+                        </tr>
+                        <tr>
+                            <td> 89 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 풀떼기</a></td> <td> 조이**** </td> <td> 2024-06-14 </td>
+                        </tr>
+                        <tr>
+                            <td> 88 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 동결건조 치킨텐더 철수세미 일산 메가주 구매 </a></td> <td> 강병**** </td> <td> 2024-05-20 </td>
+                        </tr>
+                        <tr>
+                            <td> 87 </td> <td ><a class="red" href="#"> 배송 </td> <td class="tbody_img"><a href="#"> 입금자 성함 알려드립니다 빠른 배송 안전한 배송 바랍니다 </a></td> <td> 건강**** </td> <td> 2024-04-26 </td>
+                        </tr>
+                        <tr>
+                            <td> 86 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 치킨스틱 언제 입고 되나요? </a></td> <td> 김동**** </td> <td> 2024-04-16 </td>
+                        </tr>
+                        <tr>
+                            <td> 85 </td> <td ><a class="blue" href="#"> 상품 </td> <td class="tbody_img"><a href="#"> 서울 캣쇼에서 상품을 잘 못 받았습니다. </a></td> <td> 박경**** </td> <td> 2024-04-14 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- b_table end-->
+            <div id="b_function">
+                <div class="b_f_top">
+                    <input class="search" type="search" placeholder="Search" />
+                    <input onclick="location.href='qna.html'; register();" class="btn" type="button" value="글쓰기" />
+                    <!-- onclick="location.href='qna.html'"  input에 링크 걸기 -->
+                </div>
+                <div class="b_f_bottom">
+                    <ul>
+                        <a class="left" href="#">&lt;</a>
+                        <li class="f_active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <a class="right" href="#">&gt;</a>
+                    </ul>
+                </div> <!-- b_page end -->
+            </div> <!-- b_function end -->
+        </div> <!-- b_bottom end -->
+    </div> <!-- b_wrap end-->
+    <script src="./js/boardData.js"></script>
+    <script src='./js/board.js'></script>
+
+</body>
+</html>
