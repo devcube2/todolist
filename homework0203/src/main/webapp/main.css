@@ -1,0 +1,56 @@
+* {
+	margin: 0px;
+	padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+#wrap {
+	width: 1100px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.my-common-header-footer {
+	text-align: center;
+	color: white;
+	background-color: blue;
+}
+
+.pad-tb15 {
+	padding: 15px 0px;
+}
+
+.pad-lr15 {
+	padding: 0px 15px; 
+}
+
+.bg-gray {
+	background-color: lightgray;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.height-550 {
+	height: 550px;
+}
+
+#my-header {
+	font-size: 30px;
+}
+
+#my-footer {
+	font-size: 12px;
+}
+
+#my-nav {
+    background-color: skyblue;
+}
+
+#my-nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
