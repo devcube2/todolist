@@ -13,10 +13,9 @@ if (redirect_page == null) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="main.css" type="text/css" />
+<title>index</title>
+<link rel="icon" href="/homework0203/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
 	<div id="wrap">
 		<jsp:include page="header.jsp"></jsp:include>

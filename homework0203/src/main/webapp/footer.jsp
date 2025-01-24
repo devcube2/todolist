@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>header</title>
+<title>footer</title>
 </head>
 <body>
-	<div id="my-footer" class="my-common-header-footer pad-tb15">
+	<div class="my-common-header-footer pad-tb15">
 		<footer>HRDKOREA Copyright 2016ⓒ All rights reserved Human Resource Development Service Of Korea</footer>
 	</div>
 </body>
