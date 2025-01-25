@@ -15,9 +15,6 @@ import javax.crypto.spec.SecretKeySpec;
 import util.CubeCrypto;
 
 public class SecureDao {
-	private Connection conn;
-	private static SecureDao instance;
-
 	private final String sqliteDbPath;
 
 	private byte[] key = new byte[16];
@@ -27,8 +24,10 @@ public class SecureDao {
 	private String DBURL = "jdbc:mysql://140.245.79.114:3306/homework0203";
 	private String DBID = "root";
 	private String DBPWD = "GrsIu5k4uQr5irWRowz55qum+EXCnNIylFO/CheRx90=";
-
-	private SecureDao(String sqliteDbPath) {
+	
+	protected Connection conn;
+	
+	protected SecureDao(String sqliteDbPath) {
 		this.sqliteDbPath = sqliteDbPath;
 
 		try {
@@ -51,22 +50,8 @@ public class SecureDao {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
-
-	public static SecureDao getInstance() {
-		if (instance == null) {
-			throw new IllegalStateException("SecureDao Instance not initialized.");
-		}
-		return instance;
-	}
-
-	public static SecureDao getInstance(String contextPath) {
-		if (instance == null) {
-			instance = new SecureDao(contextPath);
-		}
-		return instance;
-	}
-
+	}	
+	
 	private boolean setKeyIV() {
 		Connection conn = null;
 		ResultSet rs = null;
@@ -98,9 +83,5 @@ public class SecureDao {
 			}
 		}
 		return false;
-	}
-
-	public String getSqliteDbPath() {
-		return sqliteDbPath;
 	}
 }

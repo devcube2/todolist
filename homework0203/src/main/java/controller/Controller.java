@@ -9,23 +9,21 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import model.dao.SecureDao;
 
-public class Controller extends HttpServlet {
+public class Controller extends HttpServlet {	
 	private String sqliteDbPath = "/WEB-INF/database/homework0203.db";
 
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-
+	protected String getSqliteDbPath(ServletConfig config) {
 		ServletContext context = config.getServletContext();
 
 		try {
 			URL resourceUrl = context.getResource(sqliteDbPath);
 			if (resourceUrl != null) {
-				SecureDao.getInstance(resourceUrl.toString());
-			} else {				
-				throw new NullPointerException("resourceUrl is null : " + sqliteDbPath);
+				return resourceUrl.toString();
 			}
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+		
+		throw new NullPointerException("resourceUrl is null : " + sqliteDbPath);
 	}
 }
