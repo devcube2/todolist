@@ -15,15 +15,19 @@ public class MemberController extends Controller {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("[doPost 호출]");
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("[doGet 호출]");
-		SecureDao.getInstance();
+		try {
+			SecureDao.getInstance();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
-	
+
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("[doPut 호출]");
-	}	
+	}
 }

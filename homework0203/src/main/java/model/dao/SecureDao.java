@@ -12,6 +12,8 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import util.CubeCrypto;
+
 public class SecureDao {
 	private Connection conn;
 	private static SecureDao instance;
@@ -31,12 +33,12 @@ public class SecureDao {
 
 		try {
 			if (!setKeyIV()) {
-				System.out.println("** 키 설정 실패 **");
+				System.out.println("** 키 설정 실패 ** : ");
 				return;
 			}
 			System.out.println("키 설정 성공");
 
-			String password = decrypt(DBPWD, key, iv);
+			String password = CubeCrypto.getInstance().decrypt(DBPWD, key, iv);
 //			System.out.println("password: " + password);
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -98,16 +100,7 @@ public class SecureDao {
 		return false;
 	}
 
-	private String decrypt(String data, byte[] key, byte[] iv) throws Exception {
-		SecretKey secretKey = new SecretKeySpec(key, "AES");
-		IvParameterSpec ivSpec = new IvParameterSpec(iv);
-
-		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-		cipher.init(Cipher.DECRYPT_MODE, secretKey, ivSpec);
-
-		byte[] decodedBytes = Base64.getDecoder().decode(data);
-		byte[] decryptedBytes = cipher.doFinal(decodedBytes);
-
-		return new String(decryptedBytes);
+	public String getSqliteDbPath() {
+		return sqliteDbPath;
 	}
 }
