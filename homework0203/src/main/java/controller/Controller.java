@@ -1,29 +1,47 @@
 package controller;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.io.IOException;
 
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import jakarta.servlet.http.HttpServlet;
-import model.dao.SecureDao;
+import jakarta.servlet.http.HttpServletResponse;
+import model.dto.ErrorResponseDto;
 
 public class Controller extends HttpServlet {	
-	private String sqliteDbPath = "/WEB-INF/database/homework0203.db";
-
-	protected String getSqliteDbPath(ServletConfig config) {
-		ServletContext context = config.getServletContext();
-
-		try {
-			URL resourceUrl = context.getResource(sqliteDbPath);
-			if (resourceUrl != null) {
-				return resourceUrl.toString();
-			}
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+	// 정상 응답 보내기
+	protected void send(HttpServletResponse response, Object result) throws IOException {
+		ObjectMapper mapper = new ObjectMapper();
 		
-		throw new NullPointerException("resourceUrl is null : " + sqliteDbPath);
+		response.setStatus(200);
+		response.setContentType("application/json");		
+		response.getWriter().write(mapper.writeValueAsString(result));
+	}
+	
+	protected void send(HttpServletResponse response, Object result, ObjectMapper mapper) throws IOException {
+		response.setStatus(200);
+		response.setContentType("application/json");		
+		response.getWriter().write(mapper.writeValueAsString(result));
+	}
+
+	// 에러 응답 생성 및 보내기
+	protected void sendInternalError(HttpServletResponse response, String errorMsg, Object errorMsgDetail) throws IOException {
+		ErrorResponseDto dto = new ErrorResponseDto(500, "Server Internal Error", errorMsg, errorMsgDetail);
+		sendError(response, dto);
+	}
+	
+	protected void sendNotFoundError(HttpServletResponse response, String errorMsg, Object errorMsgDetail) throws IOException {
+		ErrorResponseDto dto = new ErrorResponseDto(404, "Not Found", errorMsg, errorMsgDetail);
+		sendError(response, dto);
+	}
+
+	private void sendError(HttpServletResponse response, ErrorResponseDto dto) throws IOException {
+		// 응답 상태 코드 설정
+		response.setStatus(dto.getStatus());
+		response.setContentType("application/json");
+
+		// JSON 변환 및 응답 본문에 작성
+		ObjectMapper mapper = new ObjectMapper();
+		response.getWriter().write(mapper.writeValueAsString(dto));
 	}
 }
