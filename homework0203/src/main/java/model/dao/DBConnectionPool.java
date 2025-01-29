@@ -49,7 +49,7 @@ public class DBConnectionPool {
 
 			log.debug("HikariCP url: {}", url);
 			log.debug("HikariCP username: {}", username);
-			log.debug("HikariCP password: {}", password);
+//			log.debug("HikariCP password: {}", password);
 			log.debug("HikariCP maxPoolSize: {}", maxPoolSize);
 			log.debug("HikariCP minIdle: {}", minIdle);
 			log.debug("HikariCP idleTimeout: {}", idleTimeout);
