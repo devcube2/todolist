@@ -12,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import model.dao.DBConnectionPool;
 import model.dao.MemberDao;
 import model.dto.MemberDto;
 
@@ -21,11 +22,17 @@ public class MemberController extends Controller {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init();
-		MemberDao.setInstance(config);
+		try {
+			DBConnectionPool.setInstance(config);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.debug("[/member/doPost 호출]");
+		
 		ObjectMapper mapper = new ObjectMapper();
 		MemberDto dto = mapper.readValue(req.getReader(), MemberDto.class);
 
@@ -41,6 +48,8 @@ public class MemberController extends Controller {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.debug("[/member/doGet 호출]");
+		
 		resp.setContentType("application/json");
 		
 		ArrayList<MemberDto> list = MemberDao.getInstance().getMemberList();
@@ -59,6 +68,8 @@ public class MemberController extends Controller {
 
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.debug("[/member/doPut 호출]");
+		
 		ObjectMapper mapper = new ObjectMapper();
 		MemberDto dto = mapper.readValue(req.getReader(), MemberDto.class);
 

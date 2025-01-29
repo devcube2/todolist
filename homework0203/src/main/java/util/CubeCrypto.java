@@ -16,45 +16,32 @@ import javax.crypto.spec.SecretKeySpec;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public record CubeCrypto() {
-	// record singleton
-	private static final CubeCrypto INSTANCE = new CubeCrypto();
-
-	public static CubeCrypto getInstance() {
-		return INSTANCE;
+public class CubeCrypto {
+	// 내부 정적 클래스를 활용한 LazyHolder 방식 (메인 클래스 로딩시 생성)
+	private static class SingletonHolder {
+		private static final CubeCrypto INSTANCE = new CubeCrypto();
 	}
 
-	public String encrypt(String data, byte[] key, byte[] iv) {
-		try {
-			SecretKey secretKey = new SecretKeySpec(key, "AES");
-			IvParameterSpec ivSpec = new IvParameterSpec(iv);
+	private CubeCrypto() {
+	}
 
-			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-			cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivSpec);
+	// getInstance() 메서드를 통해 싱글턴 객체 반환
+	public static CubeCrypto getInstance() {
+		return SingletonHolder.INSTANCE;
+	}
 
-			byte[] encryptedBytes = cipher.doFinal(data.getBytes());
+	public String encrypt(String data, byte[] key, byte[] iv) throws NoSuchAlgorithmException, NoSuchPaddingException,
+			InvalidKeyException, InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException,
+			IllegalArgumentException, Exception {		
+		SecretKey secretKey = new SecretKeySpec(key, "AES");
+		IvParameterSpec ivSpec = new IvParameterSpec(iv);
 
-			return Base64.getEncoder().encodeToString(encryptedBytes);
-		} catch (NoSuchAlgorithmException e) {
-			log.error("No Such Algorithm: " + e.getMessage());
-		} catch (NoSuchPaddingException e) {
-			log.error("No Such Padding: " + e.getMessage());
-		} catch (InvalidKeyException e) {
-			log.error("Invalid Key: " + e.getMessage());
-		} catch (InvalidAlgorithmParameterException e) {
-			log.error("Invalid Algorithm Parameter: " + e.getMessage());
-		} catch (IllegalBlockSizeException e) {
-			log.error("Illegal Bloack Size: " + e.getMessage());
-		} catch (BadPaddingException e) {
-			log.error("Bad Padding: " + e.getMessage());
-		} catch (IllegalArgumentException e) {
-			log.error("Illegal Argument: " + e.getMessage());
-		} catch (Exception e) {
-			log.error("Etc Error: " + e.getMessage());
-			e.printStackTrace();
-		}
+		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+		cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivSpec);
 
-		return null;
+		byte[] encryptedBytes = cipher.doFinal(data.getBytes());
+
+		return Base64.getEncoder().encodeToString(encryptedBytes);
 	}
 
 	public String decrypt(String data, byte[] key, byte[] iv) {

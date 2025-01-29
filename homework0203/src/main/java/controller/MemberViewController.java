@@ -10,20 +10,27 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+import model.dao.DBConnectionPool;
 import model.dao.MemberDao;
 import model.dto.MemberDto;
 
+@Slf4j
 @WebServlet("/member-view")
 public class MemberViewController extends Controller {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init();
-		MemberDao.setInstance(config);
+		try {
+			DBConnectionPool.setInstance(config);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("[/member-view/doGet 호출]");
+		log.debug("[/member-view/doGet 호출]");
 		
 		int custno = Integer.parseInt(req.getParameter("custno"));
 		MemberDto dto = MemberDao.getInstance().getMember(custno);

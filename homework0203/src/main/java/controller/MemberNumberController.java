@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import model.dao.DBConnectionPool;
 import model.dao.MemberDao;
 
 @Slf4j
@@ -16,7 +17,11 @@ public class MemberNumberController extends Controller {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init();
-		MemberDao.setInstance(config);
+		try {
+			DBConnectionPool.setInstance(config);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
 	}
 	
 	@Override
